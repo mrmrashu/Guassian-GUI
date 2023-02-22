@@ -2,7 +2,7 @@
 
 static void
 activate (GtkApplication* app,
-          gpointer        user_data)
+          gpointer user_data)
 {
   GtkWidget *window;
 
