@@ -25,16 +25,14 @@ static void
 	print_hello (GtkWidget *widget,
 				gpointer data)
 	{
-		g_print("Hello world\n");
+		g_print("Button Clicked!\n");
 	}
 
 static void 
 	activate ( GtkApplication *app,
 				gpointer user_data)
 	{
-		GtkWidget *window;
-		GtkWidget *grid;
-		GtkWidget *button;
+		GtkWidget *window, *grid, *button,	 *entry;
 
 		gtk_init(NULL, NULL);
 		load_css();
@@ -60,9 +58,11 @@ static void
 		*/
 		gtk_grid_attach (GTK_GRID (grid), button, 0, 0, 1, 1);
 
-		button = gtk_button_new_with_label ("Exit");
-		g_signal_connect_swapped (button, "clicked", G_CALLBACK(gtk_widget_destroy), window);
-		gtk_grid_attach (GTK_GRID (grid), button, 0, 1, 2, 1);
+		entry = gtk_entry_new ();
+		gtk_grid_attach (GTK_GRID (grid), entry, 0, 1, 2, 1);
+		
+		gtk_widget_set_name(entry, "workOnFocus");
+
 		gtk_widget_show_all(window);
 	}
 
@@ -73,7 +73,7 @@ int main(int argc, char ** argv)
 	GtkApplication *app;
 	int ret;
 	// Giving the application a unique ID to assosiate with
-	app = gtk_application_new("org.ashu", G_APPLICATION_FLAGS_NONE);
+	app = gtk_application_new("org.ashu", G_APPLICATION_DEFAULT_FLAGS);
 	g_signal_connect (app, "activate", G_CALLBACK(activate), NULL);
 	ret = g_application_run(G_APPLICATION(app), argc, argv);
 

@@ -25,7 +25,22 @@ window > grid > button:focus {
 	outline-offset: -1px;
 	animation : jumpFocus .17s ease-in-out;
 }
-
+window > grid > entry {
+	border-radius: 2px;
+	min-height: 20px;
+	font-size: 17px;
+	color: rgba(0, 0, 0, .7);
+	font-weight: 600;
+	font-family: "Nimbus Sans L", sans-serif;
+	box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 0 0 1px rgba(0,0,0,.2);
+}
+window > grid > entry:focus {
+	outline-style: solid;
+	outline-width: 4px;
+	outline-color: rgba(233,63,47,0.36);
+	outline-offset: -1px;
+	animation : jumpFocus .17s ease-in-out;
+}
 window > grid > button:active {
 	box-shadow: inset 0 1px 2px rgba(0,0,0,.5);
 	animation: activeFocus .17s ease-in-out;
