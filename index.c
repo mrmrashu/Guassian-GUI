@@ -60,7 +60,7 @@ static void
 		*/
 		gtk_grid_attach (GTK_GRID (grid), button, 0, 0, 1, 1);
 
-		button = gtk_button_new_with_label ("Open Entry");
+		button = gtk_button_new_with_label ("Exit");
 		g_signal_connect_swapped (button, "clicked", G_CALLBACK(gtk_widget_destroy), window);
 		gtk_grid_attach (GTK_GRID (grid), button, 0, 1, 2, 1);
 		gtk_widget_show_all(window);
